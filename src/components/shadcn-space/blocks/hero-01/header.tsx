@@ -126,7 +126,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
 
                 return (
                   <NavigationMenuItem key={navItem.title}>
-                    <NavigationMenuLink asChild>
+                    
                       <Link
                         href={navItem.href}
                         className={cn(
@@ -141,7 +141,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                       >
                         {navItem.title}
                       </Link>
-                    </NavigationMenuLink>
+                   
                   </NavigationMenuItem>
                 );
               })}
@@ -198,7 +198,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
 
                           return (
                             <NavigationMenuItem key={item.title}>
-                              <NavigationMenuLink>
+                              
                                 <Link
                                   href={item.href}
                                   onClick={() => setIsOpen(false)}
@@ -221,7 +221,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
 
                                   {item.title}
                                 </Link>
-                              </NavigationMenuLink>
+                              
                             </NavigationMenuItem>
                           );
                         })}
