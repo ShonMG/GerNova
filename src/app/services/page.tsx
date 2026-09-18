@@ -50,7 +50,7 @@ const services: Service[] = [
       "Fast, responsive and scalable websites that turn your digital presence into a powerful business tool.",
     description:
       "We design and develop modern websites that combine strong visual design, intuitive user experiences and reliable technology. Whether you need a corporate website, business platform, landing page or custom web application, we build digital experiences around your business objectives.",
-    image: "/images/web_development.png",
+    image: "/images/services/web_development.png",
     accent: "text-orange-500",
     accentBg: "bg-orange-500/10",
     deliverables: [
@@ -79,7 +79,7 @@ const services: Service[] = [
       "Modern mobile applications designed to help businesses engage customers and deliver better digital experiences.",
     description:
       "We create mobile applications that make products, services and business processes accessible wherever your customers and teams are. From customer-facing applications to internal business tools, our approach focuses on usability, performance and scalability.",
-    image: "/images/services/mobile-apps.jpg",
+    image: "/images/services/mobile-apps.png",
     accent: "text-purple-500",
     accentBg: "bg-purple-500/10",
     deliverables: [
@@ -108,7 +108,7 @@ const services: Service[] = [
       "Connect your systems, platforms and third-party services with reliable APIs and seamless integrations.",
     description:
       "Modern businesses rely on multiple digital systems. We help those systems communicate with each other through APIs and integrations, reducing manual work, improving data flow and creating a more connected technology environment.",
-    image: "/images/services/api-integration.jpg",
+    image: "/images/services/api-integrations.png",
     accent: "text-blue-500",
     accentBg: "bg-blue-500/10",
     deliverables: [
@@ -137,7 +137,7 @@ const services: Service[] = [
       "Improve your visibility, attract qualified visitors and grow your business through data-driven SEO strategies.",
     description:
       "A great website needs to be discoverable. GerNova combines technical SEO, content structure, website performance and digital growth strategies to help businesses build a stronger presence across search engines and digital channels.",
-    image: "/images/services/seo.jpg",
+    image: "/images/services/seo-digital-growth.png",
     accent: "text-teal-500",
     accentBg: "bg-teal-500/10",
     deliverables: [
@@ -166,7 +166,7 @@ const services: Service[] = [
       "Automate repetitive workflows and connect your business processes so your team can focus on what matters.",
     description:
       "We identify repetitive processes that consume time and turn them into streamlined digital workflows. From notifications and data processing to approvals, customer onboarding and internal operations, automation can help your team work more efficiently.",
-    image: "/images/services/automation.jpg",
+    image: "/images/services/business-automation.png",
     accent: "text-red-500",
     accentBg: "bg-red-500/10",
     deliverables: [
@@ -195,7 +195,7 @@ const services: Service[] = [
       "Secure, scalable cloud infrastructure and applications built to support growing digital businesses.",
     description:
       "We help businesses move applications and workloads into reliable cloud environments. Our approach focuses on scalability, availability, performance and practical infrastructure that supports your technology without unnecessary complexity.",
-    image: "/images/services/cloud-solutions.jpg",
+    image: "/images/services/cloud-solutions.png",
     accent: "text-sky-500",
     accentBg: "bg-sky-500/10",
     deliverables: [
@@ -224,7 +224,7 @@ const services: Service[] = [
       "Practical AI solutions that help businesses automate decisions, improve customer experiences and work smarter.",
     description:
       "We help businesses identify practical opportunities for artificial intelligence. Rather than adding AI for the sake of it, we focus on solutions that can improve productivity, customer interactions, information processing and business decision-making.",
-    image: "/images/services/ai-solutions.jpg",
+    image: "/images/services/ai-solutions.png",
     accent: "text-violet-500",
     accentBg: "bg-violet-500/10",
     deliverables: [

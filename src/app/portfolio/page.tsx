@@ -47,7 +47,7 @@ const projects: Project[] = [
     category: "Web Development",
     description:
       "A modern, responsive business website designed to establish a strong digital presence, communicate the brand clearly and convert visitors into customers.",
-    image: "/images/portfolio/business-website.jpg",
+    image: "/images/portfolio/websites.png",
     tags: ["React", "Responsive Design", "SEO"],
     accent: "text-orange-500",
     accentBg: "bg-orange-500/10",
@@ -65,7 +65,7 @@ const projects: Project[] = [
     category: "Mobile Application",
     description:
       "A scalable mobile experience designed to simplify customer interactions and bring essential business services directly to users.",
-    image: "/images/portfolio/mobile-app.jpg",
+    image: "/images/portfolio/mobile-system.png",
     tags: ["Mobile App", "UX/UI", "API"],
     accent: "text-purple-500",
     accentBg: "bg-purple-500/10",
@@ -83,7 +83,7 @@ const projects: Project[] = [
     category: "Automation",
     description:
       "A custom workflow solution that connects business processes, reduces repetitive tasks and improves operational efficiency.",
-    image: "/images/portfolio/automation.jpg",
+    image: "/images/portfolio/business-automation.png",
     tags: ["Automation", "APIs", "Workflows"],
     accent: "text-red-500",
     accentBg: "bg-red-500/10",
@@ -101,7 +101,7 @@ const projects: Project[] = [
     category: "Artificial Intelligence",
     description:
       "An intelligent digital solution using AI to help businesses process information, improve customer experiences and work smarter.",
-    image: "/images/portfolio/ai-solutions.jpg",
+    image: "/images/portfolio/ai-powered.png",
     tags: ["AI", "Automation", "Cloud"],
     accent: "text-violet-500",
     accentBg: "bg-violet-500/10",
@@ -829,30 +829,26 @@ const PortfolioPage = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <Button
-                  asChild
-                  className="group h-12 rounded-full bg-white px-6 text-sm font-medium text-black hover:bg-white/90"
-                >
-                  <a href="/contact">
-                    Start a project
-                    <span className="ml-3 flex h-8 w-8 items-center justify-center rounded-full bg-black text-white transition-transform duration-300 group-hover:rotate-45">
-                      <ArrowUpRight size={15} />
-                    </span>
-                  </a>
+              <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Button className="group text-sm font-medium text-white bg-gray-950 hover:text-white dark:hover:text-white hover:bg-gray-950/90 rounded-full border border-white/50 flex items-center gap-4 p-1 ps-5 w-fit h-12 cursor-pointer">
+                    <a href="#contact-form" className="flex items-center gap-4"> 
+                        <span>Start a Project</span>
+                        <div className="p-3 bg-white text-black rounded-full group-hover:rotate-45 transition-transform duration-300 ease-in-out">
+                        <ArrowUpRight size={16} /> 
+                        </div>
+                    </a> 
                 </Button>
 
-                <Button
-                  asChild
-                  variant="outline"
-                  className="h-12 rounded-full border-white/20 bg-transparent px-6 text-sm text-white hover:bg-white/10 hover:text-white"
-                >
-                  <a href="/services">
-                    Explore services
-                    <ArrowRight size={16} className="ml-2" />
-                  </a>
+                <Button className="group text-sm font-medium text-black bg-white hover:text-black dark:hover:text-black hover:bg-white/90 rounded-full flex items-center gap-4 p-1 ps-5 w-fit h-12 cursor-pointer"> 
+                    <a href="/services" className="flex items-center gap-4"> 
+                    <span>Explore Our Services</span> 
+                    <div className="p-3 bg-black text-white rounded-full group-hover:rotate-45 transition-transform duration-300 ease-in-out"> 
+                        <ArrowUpRight size={16} /> 
+                    </div> 
+                    </a> 
                 </Button>
               </div>
+              
             </div>
           </div>
         </div>

@@ -36,7 +36,7 @@ const serviceData: ServiceData[] = [
     service_title: "Web Development",
     service_description:
       "Fast, responsive and scalable websites that turn your digital presence into a powerful business tool.",
-    service_image: "/images/web_development.png",
+    service_image: "/images/services/web_development.png",
     service_bg_color: "bg-orange-500/10",
     service_text_color: "text-orange-500",
   },
@@ -45,7 +45,7 @@ const serviceData: ServiceData[] = [
     service_title: "Mobile Apps",
     service_description:
       "Modern mobile applications designed to help businesses engage customers and deliver better digital experiences.",
-    service_image: "/images/services/mobile-apps.jpg",
+    service_image: "/images/services/mobile-apps.png",
     service_bg_color: "bg-purple-500/10",
     service_text_color: "text-purple-500",
   },
@@ -54,7 +54,7 @@ const serviceData: ServiceData[] = [
     service_title: "APIs & Integrations",
     service_description:
       "Connect your systems, platforms and third-party services with reliable APIs and seamless integrations.",
-    service_image: "/images/services/api-integration.jpg",
+    service_image: "/images/services/api-integrations.png",
     service_bg_color: "bg-blue-500/10",
     service_text_color: "text-blue-500",
   },
@@ -63,7 +63,7 @@ const serviceData: ServiceData[] = [
     service_title: "SEO & Digital Growth",
     service_description:
       "Improve your visibility, attract qualified visitors and grow your business through data-driven SEO strategies.",
-    service_image: "/images/services/seo.jpg",
+    service_image: "/images/services/seo-digital-growth.png",
     service_bg_color: "bg-teal-500/10",
     service_text_color: "text-teal-500",
   },
@@ -72,7 +72,7 @@ const serviceData: ServiceData[] = [
     service_title: "Business Automation",
     service_description:
       "Automate repetitive workflows and connect your business processes so your team can focus on what matters.",
-    service_image: "/images/services/automation.jpg",
+    service_image: "/images/services/business-automation.png",
     service_bg_color: "bg-red-500/10",
     service_text_color: "text-red-500",
   },
@@ -81,7 +81,7 @@ const serviceData: ServiceData[] = [
     service_title: "Cloud Solutions",
     service_description:
       "Secure, scalable cloud infrastructure and applications built to support growing digital businesses.",
-    service_image: "/images/services/cloud-solutions.jpg",
+    service_image: "/images/services/cloud-solutions.png",
     service_bg_color: "bg-sky-500/10",
     service_text_color: "text-sky-500",
   },
@@ -90,7 +90,7 @@ const serviceData: ServiceData[] = [
     service_title: "AI Solutions",
     service_description:
       "Practical AI solutions that help businesses automate decisions, improve customer experiences and work smarter.",
-    service_image: "/images/services/ai-solutions.jpg",
+    service_image: "/images/services/ai-solutions.png",
     service_bg_color: "bg-violet-500/10",
     service_text_color: "text-violet-500",
   },

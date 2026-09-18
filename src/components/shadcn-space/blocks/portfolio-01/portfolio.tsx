@@ -17,7 +17,7 @@ type PortfolioData = {
 
 const portfolioData: PortfolioData[] = [
   {
-    portfolio_image: "/images/portfolio/business-website.jpg",
+    portfolio_image: "/images/portfolio/websites.png",
     portfolio_title: "Business Website Solutions",
     portfolio_category: "Web Development",
     portfolio_description:
@@ -25,7 +25,7 @@ const portfolioData: PortfolioData[] = [
     portfolio_tags: ["React", "Responsive Design", "SEO"],
   },
   {
-    portfolio_image: "/images/portfolio/mobile-app.jpg",
+    portfolio_image: "/images/portfolio/mobile-system.png",
     portfolio_title: "Mobile Business Platform",
     portfolio_category: "Mobile Application",
     portfolio_description:
@@ -33,7 +33,7 @@ const portfolioData: PortfolioData[] = [
     portfolio_tags: ["Mobile App", "UX/UI", "API"],
   },
   {
-    portfolio_image: "/images/portfolio/automation.jpg",
+    portfolio_image: "/images/portfolio/business-automation.png",
     portfolio_title: "Business Automation System",
     portfolio_category: "Automation",
     portfolio_description:
@@ -41,7 +41,7 @@ const portfolioData: PortfolioData[] = [
     portfolio_tags: ["Automation", "APIs", "Workflows"],
   },
   {
-    portfolio_image: "/images/portfolio/ai-solutions.jpg",
+    portfolio_image: "/images/portfolio/ai-powered.png",
     portfolio_title: "AI-Powered Business Solution",
     portfolio_category: "Artificial Intelligence",
     portfolio_description:
@@ -280,7 +280,7 @@ const Portfolio = () => {
 
               <Button 
                 className="group text-sm font-medium text-black bg-white hover:text-black dark:hover:text-black hover:bg-white/90 rounded-full flex items-center gap-4 p-1 ps-5 w-fit h-12 cursor-pointer"> 
-                <a href="#contact" className="flex items-center gap-4"> 
+                <a href="/contact" className="flex items-center gap-4"> 
                   <span>Start a Project</span> 
                   <div className="p-3 bg-black text-white rounded-full group-hover:rotate-45 transition-transform duration-300 ease-in-out"> 
                     <ArrowUpRight size={16} /> 
