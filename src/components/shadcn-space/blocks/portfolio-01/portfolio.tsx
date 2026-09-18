@@ -4,7 +4,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 
 type PortfolioData = {
@@ -51,7 +51,7 @@ const portfolioData: PortfolioData[] = [
 ];
 
 const Portfolio = () => {
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 70,
