@@ -21,157 +21,374 @@ type HeroSectionProps = {
 
 function HeroSection({ avatarList }: HeroSectionProps) {
   return (
-    <section>
-      <div className="w-full h-full relative">
-        <div className="relative w-full pt-0 md:pt-20 pb-6 md:pb-10 before:absolute before:w-full before:h-full before:bg-linear-to-r before:from-sky-100 before:via-white before:to-amber-100 before:rounded-full before:top-24 before:blur-3xl before:-z-10 dark:before:from-slate-800 dark:before:via-black dark:before:to-stone-700 dark:before:rounded-full dark:before:blur-3xl dark:before:-z-10">
-          <div className="container mx-auto relative z-10">
-            <div className="flex flex-col max-w-5xl mx-auto gap-8">
-              <div className="relative flex flex-col text-center items-center sm:gap-6 gap-4">
-                <motion.h1
-                  initial={{ opacity: 0, y: 32 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, ease: "easeInOut" }}
-                  className="lg:text-8xl md:text-7xl text-5xl font-medium leading-14 md:leading-20 lg:leading-24"
-                >
-                  Transform Your Business With {" "}
-                  <span
-                    className={`${instrumentSerif.className} tracking-tight`}
-                  >
-                   Smart Digital Technology
-                  </span>
-                </motion.h1>
-                <motion.p
-                  initial={{ opacity: 0, y: 32 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.1, ease: "easeInOut" }}
-                  className="text-base font-normal max-w-2xl text-muted-foreground"
-                >
-                  Your business deserves technology that does more than look good. 
-                  GerNova Digital Technologies designs and develops websites, 
-                  mobile applications, APIs, automation systems, cloud solutions and
-                  AI-powered digital experiences that help businesses attract customers, 
-                  streamline operations and grow.
-                </motion.p>
-              </div>
+    <section className="relative overflow-hidden">
+      <div className="w-full relative">
+        {/* Background Glow */}
+        <div
+          className="
+            absolute
+            top-20
+            left-1/2
+            -translate-x-1/2
+            w-[700px]
+            h-[500px]
+            rounded-full
+            bg-gradient-to-r
+            from-orange-100
+            via-white
+            to-purple-100
+            blur-3xl
+            opacity-70
+            -z-10
+            dark:from-orange-950/30
+            dark:via-black
+            dark:to-purple-950/30
+          "
+        />
+
+        <div className="container mx-auto relative z-10">
+          <div
+            className="
+              grid
+              grid-cols-1
+              lg:grid-cols-2
+              gap-12
+              lg:gap-16
+              items-center
+              min-h-[720px]
+              py-16
+              md:py-24
+            "
+          >
+            {/* ===================================== */}
+            {/* LEFT SIDE — HERO CONTENT */}
+            {/* ===================================== */}
+
+            <div className="flex flex-col gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 32 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.2, ease: "easeInOut" }}
-                className="flex items-center flex-col md:flex-row justify-center gap-8"
+                transition={{
+                  duration: 1,
+                  ease: "easeInOut",
+                }}
+                className="
+                  flex
+                  flex-col
+                  text-left
+                  items-start
+                  gap-5
+                "
               >
+                <h1
+                  className="
+                    lg:text-7xl
+                    xl:text-8xl
+                    md:text-6xl
+                    text-5xl
+                    font-medium
+                    leading-tight
+                  "
+                >
+                  Transform Your Business With{" "}
+                  <span
+                    className={`${instrumentSerif.className} tracking-tight`}
+                  >
+                    Smart Digital Technology
+                  </span>
+                </h1>
+
+                <p
+                  className="
+                    text-base
+                    md:text-lg
+                    !font-medium
+                    max-w-xl
+                    text-muted-foreground
+                    leading-relaxed
+                  "
+                >
+                  Your business deserves technology that does more than look
+                  good. GerNova Digital Technologies designs and develops
+                  websites, mobile applications, APIs, automation systems,
+                  cloud solutions and AI-powered digital experiences that help
+                  businesses attract customers, streamline operations and
+                  grow.
+                </p>
+              </motion.div>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1,
+                  delay: 0.2,
+                  ease: "easeInOut",
+                }}
+                className="
+                  flex
+                  items-center
+                  flex-col
+                  sm:flex-row
+                  justify-start
+                  gap-4
+                "
+              >
+                {/* Digital Audit */}
                 <Button
                   className="
-                    group relative h-12 w-fit overflow-hidden rounded-full
-                    bg-gradient-to-r from-orange-500 via-orange-500 to-purple-600
-                    p-1 ps-6 pe-14
-                    text-sm font-semibold text-white
-                    shadow-lg shadow-orange-500/20
-                    transition-all duration-500
-                    hover:ps-14 hover:pe-6
-                    hover:shadow-xl hover:shadow-purple-500/25
+                    group
+                    relative
+                    h-12
+                    w-fit
+                    overflow-hidden
+                    rounded-full
+                    bg-gradient-to-r
+                    from-orange-500
+                    via-orange-500
+                    to-purple-600
+                    p-1
+                    ps-6
+                    pe-14
+                    text-sm
+                    font-semibold
+                    text-white
+                    shadow-lg
+                    shadow-orange-500/20
+                    transition-all
+                    duration-500
+                    hover:ps-14
+                    hover:pe-6
+                    hover:shadow-xl
+                    hover:shadow-purple-500/25
                     cursor-pointer
                   "
                 >
-                  {/* CTA text */}
+                  <a href="/contact" className="flex items-center gap-4">
                   <span
                     className="
-                      relative z-10
+                      relative
+                      z-10
                       whitespace-nowrap
-                      transition-all duration-500
                     "
                   >
                     Get Your Free Digital Audit
                   </span>
 
-                  {/* Animated arrow */}
                   <span
                     className="
-                      absolute right-1
-                      flex h-10 w-10
-                      items-center justify-center
+                      absolute
+                      right-1
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
                       rounded-full
-                      bg-white text-gray-950
-                      transition-all duration-500
+                      bg-white
+                      text-gray-950
+                      transition-all
+                      duration-500
                       group-hover:right-[calc(100%-44px)]
                       group-hover:rotate-45
                     "
                   >
                     <ArrowUpRight size={17} strokeWidth={2.5} />
                   </span>
+                  </a>
                 </Button>
+
+                {/* Services */}
                 <Button
                   className="
-                    group relative h-12 w-fit overflow-hidden rounded-full
-                    bg-gradient-to-r from-orange-500 via-orange-500 to-purple-600
-                    p-1 ps-6 pe-14
-                    text-sm font-semibold text-white
-                    shadow-lg shadow-orange-500/20
-                    transition-all duration-500
-                    hover:ps-14 hover:pe-6
-                    hover:shadow-xl hover:shadow-purple-500/25
+                    group
+                    relative
+                    h-12
+                    w-fit
+                    overflow-hidden
+                    rounded-full
+                    bg-gradient-to-r
+                    from-orange-500
+                    via-orange-500
+                    to-purple-600
+                    p-1
+                    ps-6
+                    pe-14
+                    text-sm
+                    font-semibold
+                    text-white
+                    shadow-lg
+                    shadow-orange-500/20
+                    transition-all
+                    duration-500
+                    hover:ps-14
+                    hover:pe-6
+                    hover:shadow-xl
+                    hover:shadow-purple-500/25
                     cursor-pointer
                   "
                 >
-                  {/* CTA text */}
+                  <a href="/services" className="flex items-center gap-4">
                   <span
                     className="
-                      relative z-10
+                      relative
+                      z-10
                       whitespace-nowrap
-                      transition-all duration-500
                     "
                   >
                     Explore Our Services
                   </span>
 
-                  {/* Animated arrow */}
                   <span
                     className="
-                      absolute right-1
-                      flex h-10 w-10
-                      items-center justify-center
+                      absolute
+                      right-1
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
                       rounded-full
-                      bg-white text-gray-950
-                      transition-all duration-500
+                      bg-white
+                      text-gray-950
+                      transition-all
+                      duration-500
                       group-hover:right-[calc(100%-44px)]
                       group-hover:rotate-45
                     "
                   >
                     <ArrowUpRight size={17} strokeWidth={2.5} />
                   </span>
+                  </a>
                 </Button>
-                
-                {/* <div className="flex items-center sm:gap-7 gap-3">
-                  <ul className="avatar flex flex-row items-center">
-                    {avatarList.map((avatar, index) => (
-                      <li key={index} className="-mr-2 z-1 avatar-hover:ml-2">
-                        <img
-                          src={avatar.image}
-                          alt="Avatar"
-                          width={40}
-                          height={40}
-                          className="rounded-full border-2 border-white"
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="gap-1 flex flex-col items-start">
-                    <div className="flex gap-1">
-                      {Array.from({ length: 5 }).map((_, index) => (
-                        <img
-                          key={index}
-                          src="https://images.shadcnspace.com/assets/svgs/icon-star.svg"
-                          alt="star"
-                          className="h-4 w-4"
-                        />
-                      ))}
-                    </div>
-                    <p className="sm:text-sm text-xs font-normal text-muted-foreground">
-                      Trusted by 1000+ clients
-                    </p>
-                  </div>
-                </div> */}
               </motion.div>
             </div>
+
+            {/* ===================================== */}
+            {/* RIGHT SIDE — IMAGE CARD */}
+            {/* ===================================== */}
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 1,
+                delay: 0.25,
+                ease: "easeOut",
+              }}
+              className="relative"
+            >
+              {/* Glow behind card */}
+              <div
+                className="
+                  absolute
+                  -inset-4
+                  rounded-[2rem]
+                  bg-gradient-to-r
+                  from-orange-500/20
+                  to-purple-600/20
+                  blur-2xl
+                  -z-10
+                "
+              />
+
+              {/* Image Card */}
+              <div
+                className="
+                  relative
+                  overflow-hidden
+                  rounded-[2rem]
+                  border
+                  border-white/40
+                  bg-white/20
+                  shadow-2xl
+                  backdrop-blur-sm
+                  dark:border-white/10
+                  dark:bg-white/5
+                "
+              >
+                <img
+                  src="/images/gernova-hero-bg.png"
+                  alt="GerNova Digital Technologies"
+                  className="
+                    w-full
+                    h-[420px]
+                    md:h-[500px]
+                    lg:h-[580px]
+                    object-cover
+                    transition-transform
+                    duration-700
+                    hover:scale-105
+                  "
+                />
+
+                {/* Image Gradient */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-t
+                    from-black/40
+                    via-transparent
+                    to-transparent
+                  "
+                />
+
+                {/* Floating Card */}
+                <div
+                  className="
+                    absolute
+                    bottom-6
+                    left-6
+                    right-6
+                    rounded-2xl
+                    border
+                    border-white/20
+                    bg-black/40
+                    p-5
+                    text-white
+                    backdrop-blur-xl
+                  "
+                >
+                  <p className="text-sm font-medium text-white/70">
+                    GerNova Digital Technologies
+                  </p>
+
+                  <p className="mt-1 text-lg font-semibold">
+                    Technology that moves your business forward.
+                  </p>
+                </div>
+              </div>
+
+              {/* Decorative Orange Circle */}
+              <div
+                className="
+                  absolute
+                  -top-6
+                  -right-6
+                  h-20
+                  w-20
+                  rounded-full
+                  bg-orange-500/20
+                  blur-xl
+                "
+              />
+
+              {/* Decorative Purple Circle */}
+              <div
+                className="
+                  absolute
+                  -bottom-6
+                  -left-6
+                  h-24
+                  w-24
+                  rounded-full
+                  bg-purple-600/20
+                  blur-xl
+                "
+              />
+            </motion.div>
           </div>
         </div>
       </div>

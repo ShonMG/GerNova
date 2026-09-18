@@ -51,15 +51,15 @@ const footerSections: FooterData[] = [
       },
       {
         title: "About us",
-        href: "/about",
+        href: "/about-us",
       },
       {
-        title: "Work",
-        href: "work",
+        title: "Portfolio",
+        href: "/portfolio",
       },
       {
         title: "Services",
-        href: "services",
+        href: "/services",
       },
       {
         title: "Pricing",
@@ -164,7 +164,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="tel:+01051923556"
+                      href="tel:+254769848012"
                       className="text-base font-normal text-muted-foreground hover:text-foreground"
                     >
                       0769848012

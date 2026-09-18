@@ -63,14 +63,14 @@ const FAQ_DATA = [
 
 export default function Faq() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden ">
       {/* Subtle background decoration */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-20 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/5 blur-3xl"
       />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col gap-12 px-4 py-12 sm:px-6 lg:px-8 xl:py-24">
+      <div className="relative mx-auto flex max-w-7xl flex-col gap-12 px-4 py-12 sm:px-6 lg:px-8 xl:py-20">
         {/* Header */}
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center animate-in fade-in slide-in-from-top-10 duration-1000">
           <Badge

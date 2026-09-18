@@ -17,28 +17,28 @@ const geistMono = Geist_Mono({
 const navigationData: NavigationSection[] = [
       {
         title: "Home",
-        href: "#",
+        href: "/",
         isActive: true,
       },
       {
         title: "About us",
-        href: "#",
+        href: "/about-us",
       },
       {
         title: "Services",
-        href: "#",
+        href: "/services",
       },    
       {
-        title: "Team",
-        href: "#",
+        title: "Portfolio",
+        href: "/portfolio",
       },
       {
         title: "Pricing",
-        href: "#",
+        href: "/pricing",
       },
       {
-        title: "Awards",
-        href: "#",
+        title: "Contact us",
+        href: "/contact",
       },
     ];
 

@@ -1,7 +1,7 @@
 
 "use client";
 
-import { Badge } from "@/components/ui/badge";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "motion/react";
@@ -36,7 +36,7 @@ const serviceData: ServiceData[] = [
     service_title: "Web Development",
     service_description:
       "Fast, responsive and scalable websites that turn your digital presence into a powerful business tool.",
-    service_image: "/images/services/web-development.jpg",
+    service_image: "/images/web_development.png",
     service_bg_color: "bg-orange-500/10",
     service_text_color: "text-orange-500",
   },
@@ -130,28 +130,64 @@ const Services = () => {
     <section className="bg-background py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 lg:px-8 xl:px-16">
         <div className="flex flex-col gap-10 sm:gap-14 w-full">
+          <div className="flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-border sm:w-12" />
 
+            <span
+              className="
+                rounded-full
+                border
+                border-border
+                bg-background
+                px-4
+                py-1.5
+                text-[10px]
+                font-medium
+                uppercase
+                tracking-[0.22em]
+                text-muted-foreground
+                sm:text-xs
+              "
+            >
+              Our Services
+            </span>
+
+            <span className="h-px w-8 bg-border sm:w-12" />
+          </div>
           {/* Heading */}
           <div className="flex flex-col gap-5">
 
-            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+            <div className="flex flex-col gap-8">
 
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col text-center mx-auto gap-4">
+              
 
-                <Badge
-                  variant="outline"
-                  className="text-sm font-normal py-1 px-3 h-7 w-fit"
-                >
-                  Our Services
-                </Badge>
-
-                <div className="max-w-2xl">
-                  <h2 className="text-foreground text-3xl sm:text-5xl font-medium tracking-tight">
+                <div className="max-w-2xl text-center mx-auto">
+                  <h2
+                    className="
+                      text-2xl
+                      font-semibold
+                      leading-tight
+                      tracking-tight
+                      text-foreground
+                      md:text-3xl
+                      lg:text-4xl
+                    "
+                  >
                     Digital solutions built to move your business forward
                   </h2>
                 </div>
 
-                <p className="text-muted-foreground max-w-2xl text-base sm:text-lg leading-7">
+                <p
+                  className="
+                    text-center
+                    mx-auto
+                    max-w-3xl
+                    text-xl
+                    leading-relaxed
+                    text-muted-foreground
+                  "
+                >
                   From websites and mobile apps to AI, automation and cloud
                   solutions, GerNova helps businesses build, connect and grow
                   through technology.
@@ -160,7 +196,7 @@ const Services = () => {
               </div>
 
               {/* Slider controls */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 justify-center lg:justify-end">
 
                 <Button
                   variant="outline"

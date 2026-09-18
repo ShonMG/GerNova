@@ -72,21 +72,40 @@ const Portfolio = () => {
       <div className="max-w-7xl mx-auto px-4 lg:px-8 xl:px-16">
 
         <div className="flex flex-col gap-12 sm:gap-16 w-full">
+           <div className="flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-border sm:w-12" />
+
+            <span
+              className="
+                rounded-full
+                border
+                border-border
+                bg-background
+                px-4
+                py-1.5
+                text-[10px]
+                font-medium
+                uppercase
+                tracking-[0.22em]
+                text-muted-foreground
+                sm:text-xs
+              "
+            >
+              Our Services
+            </span>
+
+            <span className="h-px w-8 bg-border sm:w-12" />
+          </div>
 
           {/* Heading */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+          <div className="flex flex-col gap-8">
 
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col text-center mx-auto gap-5">
 
-              <Badge
-                variant="outline"
-                className="py-1 px-3 text-sm font-normal h-7 w-fit"
-              >
-                Selected Work
-              </Badge>
+              
 
               <div className="max-w-3xl">
-                <h2 className="text-foreground text-3xl sm:text-5xl font-semibold tracking-tight">
+                <h2 className="text-foreground text-2xl sm:text-5xl font-semibold tracking-tight">
                   Digital products built to make an impact
                 </h2>
               </div>
@@ -100,22 +119,16 @@ const Portfolio = () => {
             </div>
 
             {/* Portfolio link */}
-            <Button
-              variant="outline"
-              className="rounded-full h-12 px-5 w-fit group"
-              asChild
-            >
-              <a href="#portfolio">
-
+            <div className="flex md:flex-row flex-col items-center gap-4 shrink-0 justify-center">
+             <Button className="group text-sm font-medium text-white bg-gray-950 hover:text-white dark:hover:text-white hover:bg-gray-950/90 rounded-full border border-white/50 flex items-center gap-4 p-1 ps-5 w-fit h-12 cursor-pointer">
+               <a href="#portfolio" className="flex items-center gap-4"> 
                 <span>View All Projects</span>
-
-                <ArrowUpRight
-                  size={17}
-                  className="ml-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
-
-              </a>
-            </Button>
+                 <div className="p-3 bg-white text-black rounded-full group-hover:rotate-45 transition-transform duration-300 ease-in-out">
+                   <ArrowUpRight size={16} /> 
+                 </div>
+               </a> 
+              </Button>
+          </div>
 
           </div>
 

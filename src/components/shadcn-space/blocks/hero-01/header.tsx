@@ -1,15 +1,30 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/components/ui/sheet";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+  SheetClose,
+} from "@/components/ui/sheet";
+
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
+
 import { cn } from "@/lib/utils";
 import { Icon } from "@iconify/react";
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import Logo from "@/assets/logo/logo";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
 
 export type NavigationSection = {
   title: string;
@@ -23,17 +38,27 @@ type HeaderProps = {
 };
 
 const CollaborateButton = ({ className }: { className?: string }) => (
-  <Button className={cn("relative text-sm font-medium rounded-full h-10 p-1 ps-4 pe-12 group transition-all duration-500 hover:ps-12 hover:pe-4 w-fit overflow-hidden", className, "cursor-pointer")}>
-    <span className="relative z-10 transition-all duration-500">
-      Contact Us
-    </span>
-    <span className="absolute right-1 w-8 h-8 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-36px)] group-hover:rotate-45">
-      <ArrowUpRight size={16} />
-    </span>
+  <Button
+
+    className={cn(
+      " relative text-sm font-medium rounded-full h-10 p-1 ps-4 pe-12 group transition-all duration-500 hover:ps-12 hover:pe-4 w-fit overflow-hidden", className, "cursor-pointer"
+    )}
+  >
+    <Link href="/contact" className="flex items-center gap-4">
+      <span className="relative z-10 transition-all duration-500">
+        Contact Us
+      </span>
+
+      <span className="absolute right-1 w-8 h-8 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-36px)] group-hover:rotate-45">
+        <ArrowUpRight size={16} />
+      </span>
+    </Link>
   </Button>
 );
 
 const Header = ({ navigationData, className }: HeaderProps) => {
+  const pathname = usePathname();
+
   const [sticky, setSticky] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -42,7 +67,9 @@ const Header = ({ navigationData, className }: HeaderProps) => {
   }, []);
 
   const handleResize = useCallback(() => {
-    if (window.innerWidth >= 768) setIsOpen(false);
+    if (window.innerWidth >= 768) {
+      setIsOpen(false);
+    }
   }, []);
 
   useEffect(() => {
@@ -55,6 +82,15 @@ const Header = ({ navigationData, className }: HeaderProps) => {
     };
   }, [handleScroll, handleResize]);
 
+  // Determine which navigation item is active
+  const isNavItemActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -32 }}
@@ -63,7 +99,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
       transition={{ duration: 0.7, ease: "easeInOut" }}
       className={cn(
         "inset-x-0 z-50 px-4 flex items-center justify-center sticky top-0 h-20",
-        className,
+        className
       )}
     >
       <div
@@ -71,30 +107,44 @@ const Header = ({ navigationData, className }: HeaderProps) => {
           "w-full max-w-6xl flex items-center h-fit justify-between gap-3.5 lg:gap-6 transition-all duration-500",
           sticky
             ? "p-2.5 bg-background/60 backdrop-blur-lg border border-border/40 shadow-2xl shadow-primary/5 rounded-full"
-            : "bg-transparent border-transparent",
+            : "bg-transparent border-transparent"
         )}
       >
         {/* Logo */}
         <div>
-          <a href="#">
+          <Link href="/">
             <Logo className="gap-3" />
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
         <div>
           <NavigationMenu className="max-lg:hidden bg-muted p-0.5 rounded-full">
             <NavigationMenuList className="flex gap-0">
-              {navigationData.map((navItem) => (
-                <NavigationMenuItem key={navItem.title}>
-                  <NavigationMenuLink
-                    href={navItem.href}
-                    className={cn("px-2 lg:px-4 py-2 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground hover:bg-background outline outline-transparent hover:outline-border hover:shadow-xs transition tracking-normal", navItem.isActive ? "bg-background text-foreground" : "")}
-                  >
-                    {navItem.title}
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
+              {navigationData.map((navItem) => {
+                const active = isNavItemActive(navItem.href);
+
+                return (
+                  <NavigationMenuItem key={navItem.title}>
+                    <NavigationMenuLink asChild>
+                      <Link
+                        href={navItem.href}
+                        className={cn(
+                          "px-2 lg:px-4 py-2 text-sm font-medium rounded-full",
+                          "outline outline-transparent hover:outline-border",
+                          "hover:shadow-xs transition-all duration-200",
+                          "tracking-normal",
+                          active
+                            ? "bg-background text-foreground shadow-sm"
+                            : "text-muted-foreground hover:text-foreground hover:bg-background/80"
+                        )}
+                      >
+                        {navItem.title}
+                      </Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                );
+              })}
             </NavigationMenuList>
           </NavigationMenu>
         </div>
@@ -103,14 +153,12 @@ const Header = ({ navigationData, className }: HeaderProps) => {
         <div className="flex gap-4">
           <CollaborateButton className="hidden lg:flex" />
 
+          {/* Mobile Menu */}
           <div className="lg:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger id="mobile-menu-trigger">
                 <span className="rounded-full border border-border p-2 block">
-                  <Menu
-                    width={20}
-                    height={20}
-                  />
+                  <Menu width={20} height={20} />
                   <span className="sr-only">Menu</span>
                 </span>
               </SheetTrigger>
@@ -120,10 +168,12 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                 side="right"
                 className="w-full sm:w-96 p-0 border-l-0"
               >
+                {/* Mobile Header */}
                 <div className="flex items-center justify-between p-6">
-                  <a href="#">
+                  <Link href="/" onClick={() => setIsOpen(false)}>
                     <Logo className="gap-2" />
-                  </a>
+                  </Link>
+
                   <SheetClose id="mobile-menu-close">
                     <span className="rounded-full border border-border p-2.5 block">
                       <X width={16} height={16} />
@@ -131,45 +181,60 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                   </SheetClose>
                 </div>
 
+                {/* Mobile Navigation */}
                 <div className="flex flex-col gap-12 px-6 pb-6 overflow-y-auto">
                   <div className="flex flex-col gap-8">
-                    <SheetTitle className="sr-only">Menu</SheetTitle>
+                    <SheetTitle className="sr-only">
+                      Menu
+                    </SheetTitle>
+
                     <NavigationMenu
                       orientation="vertical"
                       className="items-start flex-none"
                     >
                       <NavigationMenuList className="flex flex-col items-start gap-3">
-                        {navigationData.map((item) => (
-                          <NavigationMenuItem key={item.title}>
-                            <NavigationMenuLink
-                              href={item.href}
-                              className={cn(
-                                "group/nav flex items-center text-2xl font-semibold tracking-tight transition-all p-0 hover:bg-transparent focus:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent",
-                                item.isActive
-                                  ? "text-primary"
-                                  : "text-muted-foreground hover:text-foreground hover:translate-x-2",
-                              )}
-                            >
-                              <div
-                                className={cn(
-                                  "h-0.5 bg-primary transition-all duration-300 overflow-hidden",
-                                  item.isActive
-                                    ? "w-4 mr-2 opacity-100"
-                                    : "w-0 opacity-0 group-hover/nav:w-4 group-hover/nav:mr-2 group-hover/nav:opacity-100",
-                                )}
-                              />
-                              {item.title}
-                            </NavigationMenuLink>
-                          </NavigationMenuItem>
-                        ))}
+                        {navigationData.map((item) => {
+                          const active = isNavItemActive(item.href);
+
+                          return (
+                            <NavigationMenuItem key={item.title}>
+                              <NavigationMenuLink>
+                                <Link
+                                  href={item.href}
+                                  onClick={() => setIsOpen(false)}
+                                  className={cn(
+                                    "group/nav flex items-center text-2xl font-semibold tracking-tight transition-all p-0",
+                                    "hover:bg-transparent focus:bg-transparent",
+                                    active
+                                      ? "text-primary"
+                                      : "text-muted-foreground hover:text-foreground hover:translate-x-2"
+                                  )}
+                                >
+                                  <div
+                                    className={cn(
+                                      "h-0.5 bg-primary transition-all duration-300 overflow-hidden",
+                                      active
+                                        ? "w-4 mr-2 opacity-100"
+                                        : "w-0 opacity-0 group-hover/nav:w-4 group-hover/nav:mr-2 group-hover/nav:opacity-100"
+                                    )}
+                                  />
+
+                                  {item.title}
+                                </Link>
+                              </NavigationMenuLink>
+                            </NavigationMenuItem>
+                          );
+                        })}
                       </NavigationMenuList>
                     </NavigationMenu>
 
+                    {/* Mobile Contact Button */}
                     <div className="w-fit">
                       <CollaborateButton />
                     </div>
                   </div>
 
+                  {/* Social Links */}
                   <div className="mt-auto flex flex-col gap-4">
                     <div className="flex gap-3">
                       {[
@@ -183,7 +248,11 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                           href="#"
                           className="flex items-center justify-center rounded-full outline outline-border hover:bg-muted transition p-3 shadow-xs"
                         >
-                          <Icon icon={icon} width={16} height={16} />
+                          <Icon
+                            icon={icon}
+                            width={16}
+                            height={16}
+                          />
                         </a>
                       ))}
                     </div>
