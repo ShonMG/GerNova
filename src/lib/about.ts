@@ -19,13 +19,44 @@ export type StatItem = {
   value: string;
   description: string;
 };
+export type CustomerReaction = {
+  icon: ComponentType<{ className?: string }>;
+  reaction: string;
+  title: string;
+  description: string;
+};
 
-export const GER_NOVA_STATS: StatItem[] = [
-  { icon: Globe2, value: "25+", description: "Digital Solutions" },
-  { icon: Smartphone, value: "20+", description: "Projects Delivered" },
-  { icon: Workflow, value: "15+", description: "Businesses Supported" },
-  { icon: Sparkles, value: "30+", description: "Technologies & Tools" },
+export const CUSTOMER_REACTIONS: CustomerReaction[] = [
+  {
+    icon: Sparkles,
+    reaction: "Impressed",
+    title: "“This looks like our business.”",
+    description:
+      "A professional digital presence that reflects your brand and builds customer confidence.",
+  },
+  {
+    icon: Target,
+    reaction: "Confident",
+    title: "“Now customers can find us.”",
+    description:
+      "Websites and digital experiences designed to make your business easier to discover and engage with.",
+  },
+  {
+    icon: Workflow,
+    reaction: "Relieved",
+    title: "“This saves us time.”",
+    description:
+      "Smart automation that reduces repetitive work and makes everyday business processes easier.",
+  },
+  {
+    icon: Lightbulb,
+    reaction: "Excited",
+    title: "“We can do more with technology.”",
+    description:
+      "Practical AI, integrations and digital systems built around real business opportunities.",
+  },
 ];
+
 
 export const VALUES = [
   {

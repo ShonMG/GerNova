@@ -8,7 +8,7 @@ export default function AddonsSection() {
         <div className="text-center">
           <Badge variant="secondary" className="rounded-full">Flexible Add-ons</Badge>
           <h2 className="mt-5 text-4xl font-semibold tracking-tight">Add what you need.</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">You don't need to pay for functionality you aren't ready for. Add individual capabilities to your project as required.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">You don&lsquo;t need to pay for functionality you aren&lsquo;t ready for. Add individual capabilities to your project as required.</p>
         </div>
         <div className="mt-12 overflow-hidden rounded-3xl border bg-background">
           {addOns.map(([name, price], index) => (

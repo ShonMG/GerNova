@@ -9,7 +9,7 @@ export default function FinalCtaSection() {
       <div className="mx-auto max-w-5xl px-6 py-24 text-center lg:px-8">
         <Sparkles className="mx-auto h-8 w-8 text-orange-500" />
         <h2 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">Not sure which package fits?</h2>
-        <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">Tell us what you want to build. We'll help you identify the right scope and provide a clear proposal based on your actual needs.</p>
+        <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">Tell us what you want to build. We&apos;ll help you identify the right scope and provide a clear proposal based on your actual needs.</p>
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button className="group text-sm font-medium text-white bg-gray-950 hover:text-white dark:hover:text-white hover:bg-gray-950/90 rounded-full border border-white/50 flex items-center gap-4 p-1 ps-5 w-fit h-12 cursor-pointer">
             <a href="/contact" className="flex items-center gap-4">

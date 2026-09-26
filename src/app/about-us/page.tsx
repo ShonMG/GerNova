@@ -12,9 +12,9 @@ import type { Metadata } from "next";
 import { createMetadata } from "@/lib/seo/site";
 
 export const metadata: Metadata = createMetadata({
-  title: "About GerNova Digital Technologies",
+  title: "About GerNova Digital Technologies | Web, AI & Digital Solutions",
   description:
-    "Learn about GerNova Digital Technologies, our mission, values, capabilities and approach to building websites, apps, automation, AI and digital solutions for businesses.",
+    "Learn about GerNova Digital Technologies a Kenya-based company, our mission, values, capabilities and approach to building websites, apps, automation, AI and digital solutions for businesses.",
   path: "/about-us",
   keywords: [
     "about GerNova",
@@ -24,6 +24,13 @@ export const metadata: Metadata = createMetadata({
     "digital agency Kenya",
     "web development company Kenya",
     "mobile app development Kenya",
+    "business automation Kenya",
+    "AI solutions Kenya",
+    "API development Kenya",
+    "cloud solutions Kenya",
+    "SEO services Kenya",
+    "website development Kenya",
+    "web development Nairobi",
   ],
 });
 

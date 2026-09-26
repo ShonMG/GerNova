@@ -6,7 +6,7 @@ import { Check, Rocket, SearchCheck, Workflow } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
 
-import { outcomes } from "@/lib/portfolio";
+
 
 export default function ProjectOutcomes() {
   return (

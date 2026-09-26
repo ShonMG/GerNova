@@ -15,7 +15,7 @@ import {
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
+
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 
@@ -37,6 +37,7 @@ type HeaderProps = {
   className?: string;
 };
 
+
 const CollaborateButton = ({ className }: { className?: string }) => (
   <Button
 
@@ -44,7 +45,8 @@ const CollaborateButton = ({ className }: { className?: string }) => (
       " relative text-sm font-medium rounded-full h-10 p-1 ps-4 pe-12 group transition-all duration-500 hover:ps-12 hover:pe-4 w-fit overflow-hidden", className, "cursor-pointer"
     )}
   >
-    <Link href="/contact" className="flex items-center gap-4">
+    <Link href="/contact"
+     className="flex items-center gap-4">
       <span className="relative z-10 transition-all duration-500">
         Contact Us
       </span>
@@ -229,29 +231,44 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                     </NavigationMenu>
 
                     {/* Mobile Contact Button */}
-                    <div className="w-fit">
+                    {/* <div className="w-fit">
                       <CollaborateButton />
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* Social Links */}
                   <div className="mt-auto flex flex-col gap-4">
                     <div className="flex gap-3">
                       {[
-                        "lucide:dribbble",
-                        "lucide:instagram",
-                        "lucide:twitter",
-                        "lucide:linkedin",
-                      ].map((icon) => (
+                        {
+                          icon: "simple-icons:x",
+                          label: "X",
+                          href: "#",
+                        },
+                        {
+                          icon: "simple-icons:facebook",
+                          label: "Facebook",
+                          href: "#",
+                        },
+                        {
+                          icon: "simple-icons:instagram",
+                          label: "Instagram",
+                          href: "#",
+                        },
+                      ].map((social) => (
                         <a
-                          key={icon}
-                          href="#"
-                          className="flex items-center justify-center rounded-full outline outline-border hover:bg-muted transition p-3 shadow-xs"
+                          key={social.label}
+                          href={social.href}
+                          aria-label={`GerNova on ${social.label}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-center justify-center rounded-full outline outline-border p-3 shadow-xs transition-all duration-300 hover:bg-muted hover:-translate-y-1"
                         >
                           <Icon
-                            icon={icon}
-                            width={16}
-                            height={16}
+                            icon={social.icon}
+                            width={18}
+                            height={18}
+                            className="transition-transform duration-300 group-hover:scale-110"
                           />
                         </a>
                       ))}

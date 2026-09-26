@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 import { createMetadata } from "@/lib/seo/site";
 
 export const metadata: Metadata = createMetadata({
-  title: "Contact GerNova Digital Technologies",
+  title: "Contact GerNova Digital Technologies | Web, AI & Digital Solutions",
   description:
     "Contact GerNova Digital Technologies for website development, mobile apps, business automation, AI solutions, cloud systems, API integrations and SEO services.",
   path: "/contact",
@@ -20,6 +20,8 @@ export const metadata: Metadata = createMetadata({
     "AI solutions Kenya",
     "business automation Kenya",
     "SEO services Kenya",
+    "AI solutions Kenya",
+    "API development Kenya",
   ],
 });
 

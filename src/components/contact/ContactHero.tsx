@@ -31,6 +31,34 @@ function ActionButton({ href, children, inverse = false }: { href: string; child
 export default function ContactHero() {
   return (
     <section className="relative overflow-hidden border-b">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/images/gernova-about-hero-bg.png')",
+        }}
+      />
+
+      {/* Background readability overlay */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-background/80 dark:bg-background/70"
+      />
+
+      {/* Orange + purple ambient glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+      >
+        <div className="absolute left-[15%] top-10 h-80 w-80 rounded-full bg-orange-500/10 blur-3xl" />
+        <div className="absolute right-[15%] top-24 h-80 w-80 rounded-full bg-purple-500/10 blur-3xl" />
+      </div>
+
+      {/* Subtle bottom fade */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent"
+      />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(249,115,22,0.12),transparent_30%),radial-gradient(circle_at_85%_25%,rgba(168,85,247,0.12),transparent_30%)]" />
 
       <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">

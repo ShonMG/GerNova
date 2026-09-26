@@ -14,7 +14,7 @@ export default function ContactCTA() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
-            Tell us where you want to go. We'll help you work out how
+            Tell us where you want to go. We&apos;ll help you work out how
             technology can get you there.
           </p>
 

@@ -15,22 +15,68 @@ const fadeUp: Variants = {
 
 const stagger: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
+  visible: {
+    transition: { staggerChildren: 0.08 },
+  },
 };
 
 export default function AboutHero() {
   return (
-    <section className="relative">
-      <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24 lg:px-8 lg:pb-32 lg:pt-32">
+    <section className="relative overflow-hidden">
+      {/* =========================================================
+          BACKGROUND IMAGE
+          Full hero background — card image remains separate below
+      ========================================================== */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage:
+            "url('/images/gernova-about-hero-bg.png')",
+        }}
+      />
+
+      {/* Dark overlay for readability */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-background/80"
+      />
+
+      {/* Orange / purple brand glow */}
+      <div
+        aria-hidden="true"
+        className="
+          absolute inset-0
+          bg-[radial-gradient(circle_at_15%_25%,rgba(249,115,22,0.16),transparent_30%),radial-gradient(circle_at_85%_35%,rgba(168,85,247,0.14),transparent_30%)]
+        "
+      />
+
+      {/* Bottom fade into the next section */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent"
+      />
+
+      {/* =========================================================
+          HERO CONTENT
+      ========================================================== */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24 lg:px-8 lg:pb-32 lg:pt-32">
         <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.85fr] lg:gap-20">
+          {/* =====================================================
+              LEFT CONTENT
+          ====================================================== */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={stagger}
             className="max-w-3xl"
           >
-            <motion.div variants={fadeUp} className="mb-7 flex items-center gap-3">
+            <motion.div
+              variants={fadeUp}
+              className="mb-7 flex items-center gap-3"
+            >
               <span className="h-px w-10 bg-foreground" />
+
               <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-muted-foreground sm:text-xs">
                 About GerNova
               </span>
@@ -41,7 +87,9 @@ export default function AboutHero() {
               className="text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
             >
               Technology designed to move{" "}
-              <span className="text-muted-foreground">your business forward.</span>
+              <span className="text-muted-foreground">
+                your business forward.
+              </span>
             </motion.h1>
 
             <motion.p
@@ -49,18 +97,27 @@ export default function AboutHero() {
               className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg"
             >
               GerNova Digital Technologies creates modern digital products and
-              technology solutions that help businesses strengthen their digital
-              presence, simplify operations, automate repetitive processes and
-              create new opportunities for growth.
+              technology solutions that help businesses strengthen their
+              digital presence, simplify operations, automate repetitive
+              processes and create new opportunities for growth.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="mt-9 flex flex-col gap-3 sm:flex-row">
+            {/* =================================================
+                BUTTONS — KEPT EXACTLY AS PROVIDED
+            ================================================== */}
+            <motion.div
+              variants={fadeUp}
+              className="mt-9 flex flex-col gap-3 sm:flex-row"
+            >
               <Button
-                
                 className="group h-12 w-fit rounded-full border border-white/50 bg-gray-950 p-1 ps-5 text-sm font-medium text-white hover:bg-gray-950/90 hover:text-white dark:hover:text-white"
               >
-                <a href="#our-story" className="flex items-center gap-4">
+                <a
+                  href="#our-story"
+                  className="flex items-center gap-4"
+                >
                   <span>Discover our story</span>
+
                   <span className="rounded-full bg-white p-3 text-black transition-transform duration-300 group-hover:rotate-45">
                     <ArrowUpRight size={16} />
                   </span>
@@ -68,11 +125,14 @@ export default function AboutHero() {
               </Button>
 
               <Button
-                
                 className="group h-12 w-fit rounded-full bg-white p-1 ps-5 text-sm font-medium text-black hover:bg-white/90 hover:text-black dark:hover:text-black"
               >
-                <a href="#capabilities" className="flex items-center gap-4">
+                <a
+                  href="#capabilities"
+                  className="flex items-center gap-4"
+                >
                   <span>What we do</span>
+
                   <span className="rounded-full bg-black p-3 text-white transition-transform duration-300 group-hover:rotate-45">
                     <ArrowUpRight size={16} />
                   </span>
@@ -81,10 +141,16 @@ export default function AboutHero() {
             </motion.div>
           </motion.div>
 
+          {/* =====================================================
+              CARD IMAGE — YOUR ORIGINAL IMAGE IS PRESERVED
+          ====================================================== */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
+            transition={{
+              duration: 0.9,
+              ease: "easeOut",
+            }}
             className="relative"
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-muted sm:aspect-square lg:aspect-[4/5]">
@@ -102,7 +168,10 @@ export default function AboutHero() {
 
               <div className="absolute bottom-5 left-5 right-5 sm:bottom-7 sm:left-7 sm:right-7">
                 <div className="rounded-xl border border-white/20 bg-black/35 p-5 text-white backdrop-blur-xl">
-                  <p className="text-sm font-medium">Ideas → Products → Impact</p>
+                  <p className="text-sm font-medium">
+                    Ideas → Products → Impact
+                  </p>
+
                   <p className="mt-1 text-xs leading-5 text-white/70">
                     Technology designed around your business goals.
                   </p>
@@ -110,8 +179,16 @@ export default function AboutHero() {
               </div>
             </div>
 
-            <div aria-hidden className="absolute -bottom-5 -left-5 -z-10 size-28 rounded-full border border-border" />
-            <div aria-hidden className="absolute -right-4 -top-4 -z-10 size-20 rounded-full border border-border" />
+            {/* Decorative circles */}
+            <div
+              aria-hidden
+              className="absolute -bottom-5 -left-5 -z-10 size-28 rounded-full border border-border"
+            />
+
+            <div
+              aria-hidden
+              className="absolute -right-4 -top-4 -z-10 size-20 rounded-full border border-border"
+            />
           </motion.div>
         </div>
       </div>

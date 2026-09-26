@@ -9,7 +9,7 @@ export default function ProcessSection() {
         <div className="text-center">
           <Badge variant="outline" className="rounded-full">Simple Process</Badge>
           <h2 className="mt-5 text-4xl font-semibold tracking-tight">No pricing surprises.</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">We scope the work before development begins so you understand what you're paying for.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">We scope the work before development begins so you understand what you&apos;re paying for.</p>
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-4">
           {processSteps.map(([number, title, description]) => (

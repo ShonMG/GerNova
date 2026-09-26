@@ -2,65 +2,73 @@
 
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { GER_NOVA_STATS } from "@/lib/about";
+import { CUSTOMER_REACTIONS } from "@/lib/about";
 
 export default function AboutStats() {
   return (
     <section className="relative z-20 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-            <div className="grid overflow-hidden rounded-3xl border border-border bg-background shadow-xl shadow-black/5 sm:grid-cols-2 lg:grid-cols-4">
-            {GER_NOVA_STATS.map((stat, index) => {
-                const Icon = stat.icon;
+      <div className="mx-auto max-w-7xl">
+        <div className="grid overflow-hidden rounded-3xl border border-border bg-background shadow-xl shadow-black/5 sm:grid-cols-2 lg:grid-cols-4">
+          {CUSTOMER_REACTIONS.map((reaction, index) => {
+            const Icon = reaction.icon;
 
-                return (
-                <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{
-                    duration: 0.5,
-                    delay: index * 0.08,
-                    }}
-                    className={cn(
-                    "group flex min-h-[190px] flex-col justify-between p-7 transition-all duration-300 hover:bg-muted/50 sm:p-8",
-                    // Desktop vertical separators
-                    index < 3 && "lg:border-r lg:border-border",
+            return (
+              <motion.div
+                key={reaction.reaction}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                }}
+                className={cn(
+                  "group flex min-h-[210px] flex-col justify-between p-7 transition-all duration-300 hover:bg-muted/50 sm:p-8",
 
-                    // Mobile/tablet horizontal separators
-                    index < 2 && "border-b border-border sm:border-b",
-                    index === 2 && "sm:border-b-0",
+                  // Tablet horizontal separators
+                  index < 2 && "border-b border-border sm:border-b",
 
-                    // Tablet vertical separator
-                    index % 2 === 0 && "sm:border-r sm:border-border",
+                  // Tablet vertical separators
+                  index % 2 === 0 && "sm:border-r sm:border-border",
 
-                    // Remove unwanted separators on large screens
-                    "lg:border-b-0",
+                  // Remove tablet bottom border from second row
+                  index >= 2 && "sm:border-b-0",
 
-                    // Correct desktop borders
-                    index === 1 && "lg:border-r",
-                    index === 2 && "lg:border-r",
-                    index === 3 && "lg:border-r-0"
-                    )}
-                >
-                    <Icon
-                    className="size-6 text-muted-foreground transition-all duration-300 group-hover:scale-110 group-hover:text-foreground"
-                    />
+                  // Desktop vertical separators
+                  index < CUSTOMER_REACTIONS.length - 1 &&
+                    "lg:border-b-0 lg:border-r lg:border-border",
 
-                    <div>
-                    <p className="text-4xl font-semibold tracking-tight text-foreground">
-                        {stat.value}
-                    </p>
+                  // Remove final desktop separator
+                  index === CUSTOMER_REACTIONS.length - 1 &&
+                    "lg:border-r-0",
+                )}
+              >
+                {/* Icon + Reaction */}
+                <div className="flex items-center justify-between">
+                  <div className="flex size-10 items-center justify-center rounded-full border border-border bg-background">
+                    <Icon className="size-5 text-muted-foreground transition-all duration-300 group-hover:scale-110 group-hover:text-foreground" />
+                  </div>
 
-                    <p className="mt-2 text-sm text-muted-foreground">
-                        {stat.description}
-                    </p>
-                    </div>
-                </motion.div>
-                );
-            })}
-            </div>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    {reaction.reaction}
+                  </span>
+                </div>
+
+                {/* Customer interaction */}
+                <div className="mt-8">
+                  <p className="text-lg font-semibold leading-snug tracking-tight text-foreground">
+                    {reaction.title}
+                  </p>
+
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {reaction.description}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
+      </div>
     </section>
   );
 }

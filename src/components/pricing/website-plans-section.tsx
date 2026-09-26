@@ -27,7 +27,7 @@ export default function WebsitePlansSection() {
                 <h3 className="mt-3 text-3xl font-semibold">{plan.price}</h3>
                 <p className="mt-4 min-h-[72px] text-sm leading-6 text-muted-foreground">{plan.description}</p>
                 <div className="my-7 h-px bg-border" />
-                <p className="mb-4 text-sm font-semibold">What's included</p>
+                <p className="mb-4 text-sm font-semibold">What&apos;s included</p>
                 <ul className="space-y-3">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-sm text-muted-foreground">

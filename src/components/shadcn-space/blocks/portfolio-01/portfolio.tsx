@@ -91,7 +91,7 @@ const Portfolio = () => {
                 sm:text-xs
               "
             >
-              Our Services
+              Our Portfolio
             </span>
 
             <span className="h-px w-8 bg-border sm:w-12" />
@@ -121,7 +121,7 @@ const Portfolio = () => {
             {/* Portfolio link */}
             <div className="flex md:flex-row flex-col items-center gap-4 shrink-0 justify-center">
              <Button className="group text-sm font-medium text-white bg-gray-950 hover:text-white dark:hover:text-white hover:bg-gray-950/90 rounded-full border border-white/50 flex items-center gap-4 p-1 ps-5 w-fit h-12 cursor-pointer">
-               <a href="#portfolio" className="flex items-center gap-4"> 
+               <a href="/portfolio" className="flex items-center gap-4"> 
                 <span>View All Projects</span>
                  <div className="p-3 bg-white text-black rounded-full group-hover:rotate-45 transition-transform duration-300 ease-in-out">
                    <ArrowUpRight size={16} /> 

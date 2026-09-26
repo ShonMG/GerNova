@@ -22,7 +22,7 @@ export default function CtaSection() {
             <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
               <div>
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/50">
-                  Let's build something useful
+                  Let&apos;s build something useful
                 </p>
 
                 <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">

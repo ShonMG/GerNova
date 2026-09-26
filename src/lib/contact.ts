@@ -27,7 +27,7 @@ export const contactDetails = {
   location: "Kenya • Remote",
 };
 
-export const formspreeEndpoint = "https://formspree.io/f/YOUR_FORM_ID";
+export const formspreeEndpoint = "https://formspree.io/f/xoevkagd";
 
 export const enquirySteps = [
   ["01", "Tell us the idea", "What are you trying to build or improve?"],

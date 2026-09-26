@@ -9,7 +9,7 @@ import { createMetadata } from "@/lib/seo/site";
 
 export const metadata: Metadata = createMetadata({
   title:
-    "Websites, Apps, AI & Digital Solutions for Modern Businesses",
+    "Gernova Digital Technologies | Web, AI & Digital Solutions for Modern Businesses",
   description:
     "GerNova Digital Technologies builds websites, mobile apps, automation agents, AI solutions, cloud systems, APIs and SEO strategies that help businesses attract customers, streamline operations and grow.",
   path: "/",

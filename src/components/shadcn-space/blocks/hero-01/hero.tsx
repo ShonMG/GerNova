@@ -23,47 +23,71 @@ type HeroSectionProps = {
 function HeroSection({ avatarList }: HeroSectionProps) {
   return (
     <section className="relative overflow-hidden">
-      <div className="w-full relative">
-        {/* Background Glow */}
-        <div
-          className="
-            absolute
-            top-20
-            left-1/2
-            -translate-x-1/2
-            w-[700px]
-            h-[500px]
-            rounded-full
-            bg-gradient-to-r
-            from-orange-100
-            via-white
-            to-purple-100
-            blur-3xl
-            opacity-70
-            -z-10
-            dark:from-orange-950/30
-            dark:via-black
-            dark:to-purple-950/30
-          "
-        />
+      {/* =========================================================
+          FULL HERO BACKGROUND IMAGE
+      ========================================================== */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage:
+            "url('/images/gernova-about-hero-bg.png')",
+        }}
+      />
 
-        <div className="container mx-auto relative z-10">
+      {/* Background overlay */}
+      <div
+        aria-hidden="true"
+        className="
+          absolute
+          inset-0
+          bg-background/80
+          dark:bg-background/70
+        "
+      />
+
+      {/* Orange / Purple GerNova glow */}
+      <div
+        aria-hidden="true"
+        className="
+          absolute
+          inset-0
+          bg-[radial-gradient(circle_at_15%_20%,rgba(249,115,22,0.18),transparent_30%),radial-gradient(circle_at_85%_30%,rgba(168,85,247,0.16),transparent_30%)]
+        "
+      />
+
+      {/* Subtle bottom fade */}
+      <div
+        aria-hidden="true"
+        className="
+          absolute
+          inset-x-0
+          bottom-0
+          h-40
+          bg-gradient-to-t
+          from-background
+          to-transparent
+        "
+      />
+
+      <div className="relative z-10 w-full">
+        <div className="container relative z-10 mx-auto">
           <div
             className="
               grid
-              grid-cols-1
-              lg:grid-cols-2
-              gap-12
-              lg:gap-16
-              items-center
               min-h-[720px]
+              grid-cols-1
+              items-center
+              gap-12
               py-16
               md:py-24
+              lg:grid-cols-2
+              lg:gap-16
             "
           >
-            {/* ===================================== */}
-            {/* LEFT SIDE — HERO CONTENT */}
-            {/* ===================================== */}
+            {/* =====================================
+                LEFT SIDE — HERO CONTENT
+            ====================================== */}
 
             <div className="flex flex-col gap-8">
               <motion.div
@@ -76,19 +100,19 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                 className="
                   flex
                   flex-col
-                  text-left
                   items-start
                   gap-5
+                  text-left
                 "
               >
                 <h1
                   className="
-                    lg:text-7xl
-                    xl:text-8xl
-                    md:text-6xl
                     text-5xl
                     font-medium
                     leading-tight
+                    md:text-6xl
+                    lg:text-7xl
+                    xl:text-8xl
                   "
                 >
                   Transform Your Business With{" "}
@@ -101,12 +125,12 @@ function HeroSection({ avatarList }: HeroSectionProps) {
 
                 <p
                   className="
-                    text-base
-                    md:text-lg
-                    !font-medium
                     max-w-xl
-                    text-muted-foreground
+                    text-base
+                    !font-medium
                     leading-relaxed
+                    text-muted-foreground
+                    md:text-lg
                   "
                 >
                   Your business deserves technology that does more than look
@@ -118,7 +142,10 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                 </p>
               </motion.div>
 
-              {/* CTA Buttons */}
+              {/* =====================================
+                  CTA BUTTONS — PRESERVED
+              ====================================== */}
+
               <motion.div
                 initial={{ opacity: 0, y: 32 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -129,11 +156,11 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                 }}
                 className="
                   flex
-                  items-center
                   flex-col
-                  sm:flex-row
+                  items-center
                   justify-start
                   gap-4
+                  sm:flex-row
                 "
               >
                 {/* Digital Audit */}
@@ -143,6 +170,7 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                     relative
                     h-12
                     w-fit
+                    cursor-pointer
                     overflow-hidden
                     rounded-full
                     bg-gradient-to-r
@@ -163,40 +191,45 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                     hover:pe-6
                     hover:shadow-xl
                     hover:shadow-purple-500/25
-                    cursor-pointer
                   "
                 >
-                  <a href="/contact" className="flex items-center gap-4">
-                  <span
-                    className="
-                      relative
-                      z-10
-                      whitespace-nowrap
-                    "
+                  <a
+                    href="/contact"
+                    className="flex items-center gap-4"
                   >
-                    Get Your Free Digital Audit
-                  </span>
+                    <span
+                      className="
+                        relative
+                        z-10
+                        whitespace-nowrap
+                      "
+                    >
+                      Get Your Free Digital Audit
+                    </span>
 
-                  <span
-                    className="
-                      absolute
-                      right-1
-                      flex
-                      h-10
-                      w-10
-                      items-center
-                      justify-center
-                      rounded-full
-                      bg-white
-                      text-gray-950
-                      transition-all
-                      duration-500
-                      group-hover:right-[calc(100%-44px)]
-                      group-hover:rotate-45
-                    "
-                  >
-                    <ArrowUpRight size={17} strokeWidth={2.5} />
-                  </span>
+                    <span
+                      className="
+                        absolute
+                        right-1
+                        flex
+                        h-10
+                        w-10
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-white
+                        text-gray-950
+                        transition-all
+                        duration-500
+                        group-hover:right-[calc(100%-44px)]
+                        group-hover:rotate-45
+                      "
+                    >
+                      <ArrowUpRight
+                        size={17}
+                        strokeWidth={2.5}
+                      />
+                    </span>
                   </a>
                 </Button>
 
@@ -207,6 +240,7 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                     relative
                     h-12
                     w-fit
+                    cursor-pointer
                     overflow-hidden
                     rounded-full
                     bg-gradient-to-r
@@ -227,48 +261,53 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                     hover:pe-6
                     hover:shadow-xl
                     hover:shadow-purple-500/25
-                    cursor-pointer
                   "
                 >
-                  <a href="/services" className="flex items-center gap-4">
-                  <span
-                    className="
-                      relative
-                      z-10
-                      whitespace-nowrap
-                    "
+                  <a
+                    href="/services"
+                    className="flex items-center gap-4"
                   >
-                    Explore Our Services
-                  </span>
+                    <span
+                      className="
+                        relative
+                        z-10
+                        whitespace-nowrap
+                      "
+                    >
+                      Explore Our Services
+                    </span>
 
-                  <span
-                    className="
-                      absolute
-                      right-1
-                      flex
-                      h-10
-                      w-10
-                      items-center
-                      justify-center
-                      rounded-full
-                      bg-white
-                      text-gray-950
-                      transition-all
-                      duration-500
-                      group-hover:right-[calc(100%-44px)]
-                      group-hover:rotate-45
-                    "
-                  >
-                    <ArrowUpRight size={17} strokeWidth={2.5} />
-                  </span>
+                    <span
+                      className="
+                        absolute
+                        right-1
+                        flex
+                        h-10
+                        w-10
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-white
+                        text-gray-950
+                        transition-all
+                        duration-500
+                        group-hover:right-[calc(100%-44px)]
+                        group-hover:rotate-45
+                      "
+                    >
+                      <ArrowUpRight
+                        size={17}
+                        strokeWidth={2.5}
+                      />
+                    </span>
                   </a>
                 </Button>
               </motion.div>
             </div>
 
-            {/* ===================================== */}
-            {/* RIGHT SIDE — IMAGE CARD */}
-            {/* ===================================== */}
+            {/* =====================================
+                RIGHT SIDE — EXISTING IMAGE CARD
+            ====================================== */}
 
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -282,19 +321,20 @@ function HeroSection({ avatarList }: HeroSectionProps) {
             >
               {/* Glow behind card */}
               <div
+                aria-hidden="true"
                 className="
                   absolute
                   -inset-4
+                  -z-10
                   rounded-[2rem]
                   bg-gradient-to-r
                   from-orange-500/20
                   to-purple-600/20
                   blur-2xl
-                  -z-10
                 "
               />
 
-              {/* Image Card */}
+              {/* Existing Image Card */}
               <div
                 className="
                   relative
@@ -316,19 +356,20 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                   height={800}
                   priority
                   className="
-                    w-full
                     h-[420px]
-                    md:h-[500px]
-                    lg:h-[580px]
+                    w-full
                     object-cover
                     transition-transform
                     duration-700
                     hover:scale-105
+                    md:h-[500px]
+                    lg:h-[580px]
                   "
                 />
 
                 {/* Image Gradient */}
                 <div
+                  aria-hidden="true"
                   className="
                     absolute
                     inset-0
@@ -367,10 +408,11 @@ function HeroSection({ avatarList }: HeroSectionProps) {
 
               {/* Decorative Orange Circle */}
               <div
+                aria-hidden="true"
                 className="
                   absolute
-                  -top-6
                   -right-6
+                  -top-6
                   h-20
                   w-20
                   rounded-full
@@ -381,6 +423,7 @@ function HeroSection({ avatarList }: HeroSectionProps) {
 
               {/* Decorative Purple Circle */}
               <div
+                aria-hidden="true"
                 className="
                   absolute
                   -bottom-6
