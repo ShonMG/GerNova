@@ -4,6 +4,7 @@ import { Instrument_Serif } from "next/font/google";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -308,9 +309,12 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                   dark:bg-white/5
                 "
               >
-                <img
+                <Image
                   src="/images/gernova-hero-bg.png"
                   alt="GerNova Digital Technologies"
+                  width={1200}
+                  height={800}
+                  priority
                   className="
                     w-full
                     h-[420px]
